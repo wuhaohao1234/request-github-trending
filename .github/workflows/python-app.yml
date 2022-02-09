@@ -20,15 +20,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pyquery 
-    - name: run python
-      run: python3 index.py
+        pip install requests pyquery
     - name: release
       run: |
         git config --local user.email "bot@github.com"
         git config --local user.name "bot"
         git remote set-url origin https://${{ github.actor }}:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}
         git pull --rebase
+        python3 index.py
         git add .
         git commit -m "update by github action"
         git push
