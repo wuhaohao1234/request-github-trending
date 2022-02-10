@@ -1,3 +1,3 @@
-# request-github-trendig
+# request-github-trending
 
-抓取github trending
+每小时抓取github trending
